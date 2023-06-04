@@ -1,0 +1,48 @@
+/* paleta de colores */
+
+$green: #A0FF0D;
+$pink: #FF009D;
+$white: #FFF;
+$black: #0B0B0B;
+$grey: #5E5D6B;
+
+
+/* fuentes */
+
+$title-font: 'Fugaz One', cursive;
+$text-font: 'Gemunu Libre', sans-serif;
+
+
+/* resoluciones */
+
+$tablet: 768px;
+$desktop: 1024px;
+
+
+/* separaciones */
+$espacio-mini: 10px;
+$espacio-chico: 20px;
+$espacio-medio: 40px;
+$espacio-grande: 60px;
+
+
+$shadow: 8px 8px 10px rgba(0, 0, 0, 1);
+
+// agregar variable de font size
+
+
+/* MIXIN */
+
+@mixin responsive($medida : 768px ) {
+    @media screen and (min-width: $medida){
+        @content;
+    }
+}
+
+@mixin flex($direction, $cut, $justify, $align){
+    display: flex;
+    flex-flow: $direction $cut;
+    justify-content: $justify;
+    align-items: $align;
+}
+

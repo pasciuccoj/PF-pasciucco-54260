@@ -1,0 +1,180 @@
+/* carousel */
+
+.carousel-item {
+    img {
+        height: 100vh;
+        object-fit: cover;
+    }
+}
+
+/* logo en el carousel */
+// ojo, al modificar fotos en el mobile view, seguro haya que modificar tmb la posición
+
+.slogan {
+    // color: $green;
+    text-shadow: $shadow;
+
+    h1 {
+        position: absolute;
+        z-index: 1;
+        bottom: 80px;
+        right: 80px;
+        font-family: $title-font;
+        font-size: 2em;
+        margin: 0;
+
+        span {
+            color: $pink;
+        }
+
+        @include responsive() {
+            font-size: 3em;
+            bottom: 100px;
+            right: 180px;
+        }
+
+        @include responsive(1024px) {
+            font-size: 4em;
+            bottom: 120px;
+            right: 200px;
+        }
+    }
+
+    p {
+        position: absolute;
+        z-index: 1;
+        bottom: 60px;
+        right: 100px;
+        font-weight: 400;
+        margin: 0;
+
+        span {
+            color: $pink;
+            font-weight: 700;
+        }
+
+        @include responsive() {
+            font-size: 1.5em;
+            bottom: 80px;
+            right: 200px;
+
+        }
+
+        @include responsive(1024px) {
+            font-size: 2em;
+            bottom: 100px;
+            right: 250px;
+        }
+
+    }
+}
+
+
+
+/* cards productos */
+
+.container-cards {
+    padding: 25px;
+    margin: 10% 0;
+    // display: flex;
+    // justify-content: center;
+    @include responsive(){
+        padding: 25px;
+    }
+    // @include responsive(1024px){
+    //     margin: 10px 50px;
+    // }
+
+    .card {
+        background-color: $black;
+        text-align: center;
+        box-shadow: $shadow;
+        padding: 20px;
+        margin: 10px 0;    
+        
+        @include responsive(){
+            margin: 10px;
+        }
+
+
+        p, h5 {
+            color: $white;
+        }
+    
+        img {
+            height: 400px;
+            border-radius: 10px;
+        }
+        
+        .price {
+            font-family: $title-font;
+            font-size: 2em;
+        }
+
+        .btn {
+            background-color: $green;
+            border: 1px solid #000;
+            color: $black;
+            font-family: $title-font;
+            width: 100%;
+            padding: 10px;
+            box-shadow: $shadow;
+        
+            &:hover {
+                background-color: $pink;
+                color: $white;
+            }
+        
+        }
+    }
+}
+
+
+
+
+
+
+/* cards */
+/*
+.card {
+    background-color: #0b0b0b;
+    text-align: center;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 1);
+}
+
+.container-cards .card {
+    padding: 25px;
+    margin: 25px 0;
+}
+
+.card p,
+.card h5 {
+    color: #fff;
+}
+
+.card img {
+    height: 400px;
+    border-radius: 10px;
+}
+
+.card .price {
+    font-family: 'Fugaz One', cursive;
+    font-size: 2em;
+}
+
+.card .btn {
+    background-color: #a0ff0d;
+    border: 1px solid black;
+    color: #0b0b0b;
+    font-family: 'Fugaz One', cursive;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 1);
+}
+
+.card .btn:hover {
+    background-color: #FF009D;
+    color: #fff;
+}
+
+*/
