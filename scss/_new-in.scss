@@ -1,0 +1,42 @@
+.new-h2{
+    margin: 50px;
+    font-family: $title-font;
+    text-align: center;
+}
+
+.new-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    @include responsive(){
+        flex-direction: row;
+        margin: 60px
+    }
+
+
+
+   
+    .image{
+        background-color: $green;
+        box-shadow: $shadow;
+        img {
+            height: 300px;
+            width: 250px;
+            object-fit: cover;
+            padding: 5px;
+            
+        }
+    }
+
+    .description {
+        background-color: $green;
+        color: #000;
+        padding: 20px;
+        text-align: center;
+        box-shadow: $shadow;
+        margin: 30px;
+    }
+}

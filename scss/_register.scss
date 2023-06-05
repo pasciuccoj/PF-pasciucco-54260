@@ -1,0 +1,113 @@
+/* register */
+
+.container-titulo {
+    margin: 30px 0;
+    text-align: center;
+    font-family: $title-font;
+
+    .pink {
+        color: $pink;
+    }
+
+    .titulo-registro {
+        @include responsive() {
+            font-size: 3em;
+        }
+    }
+}
+
+
+// .main-register {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+
+.main-register {
+
+    @include responsive(1024px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .container-img {
+        background-color: $pink;
+        margin: 5px 10px;
+        img {
+            width: 100%;
+            padding: 20px;
+        
+            @include responsive(1024px){ // centrar imagen dentro del container rosa en desktop. ojo esta rari
+                padding: 80px 20px;
+            }
+        }
+
+        @include responsive() {
+            margin: 30px 60px
+        }
+
+        @include responsive(1024px){
+            margin: 30px 10px 30px 50px;
+        }
+
+    }
+
+    .registro-container {
+        background-color: $green;
+        color: $black;
+        margin: 10px 10px;
+
+        @include responsive() {
+            margin: 30px 60px;
+        }
+
+        @include responsive(1024px){
+            margin: 30px 50px 30px 10px;
+            
+        }
+
+        
+        .campos {
+
+            @include flex(column, nowrap, center, center);
+            margin: 5px 10px;
+
+            @include responsive() {
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 10px 80px;
+            }
+
+            input {
+                width: 250px;
+            }
+        }
+
+        .btn-container {
+            @include flex(column, nowrap, center, center);
+            margin: 20px;
+
+            .submit {
+                border: 1px solid #000;
+                font-family: $title-font;
+                background-color: $pink;
+                color: $white;
+                cursor: pointer;
+                padding: 10px;
+                margin: 15px 0;
+                width: 250px;
+
+            }
+
+            a {
+                color: $pink;
+                font-weight: bold;
+            }
+
+
+        }
+
+    }
+}
+

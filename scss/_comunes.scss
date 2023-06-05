@@ -58,7 +58,8 @@ footer {
     @include flex(column, nowrap, space-around, center);
     padding: 20px;
     text-align: center;
-
+    border: 3px solid black;
+    margin-top: 50px;
     .footer-logo { 
         @include flex(row, nowrap, center, center);
         font-size: 1.5em;

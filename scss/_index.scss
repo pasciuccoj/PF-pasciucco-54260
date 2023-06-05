@@ -70,6 +70,14 @@
 }
 
 
+.new {
+    font-family: $title-font;
+    
+    &:hover{
+        color: $pink;
+    }
+}
+
 
 /* cards productos */
 

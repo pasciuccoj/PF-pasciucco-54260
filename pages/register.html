@@ -15,31 +15,26 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- css propio  -->
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Document</title>
+    <title>Registrarse | AFTRLf </title>
 </head>
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
+    
+    <nav class="navbar">
+        <div>
             <a class="logo" href="../index.html">AFTERLIFE</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav gap-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="register.html">Registrarse</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shopbag.html">Carrito</a>
-                    </li>
-
-                </ul>
-            </div>
+        </div>
+        <div>
+            <a class="navbar-brand" href="./register.html">
+                <iconify-icon icon="pixelarticons:user"></iconify-icon>
+            </a>
+            <a class="navbar-brand" href="./shopbag.html">
+                <iconify-icon icon="pixelarticons:shopping-bag"></iconify-icon>
+            </a>
         </div>
     </nav>
+
 
     <main>
         <div class="container-titulo">
@@ -55,6 +50,7 @@
             </div>
 
             <div class="registro-container">
+                    <h4 class="text-center p-3">CREAR CUENTA</h4>
                 <form action="submit">
                     <div class="campos">
                         <label for="name">Nombre completo:</label>
@@ -92,15 +88,23 @@
                     <div class="campos">
                         <label for="country">País:</label>
                         <input type="text" id="country" name="country" required>
-                    </div>                  
-                    <div class="campos">
-                        <input type="checkbox" name="checkbox" id="checkbox" required>
-                        <label for="checkbox">Acepto vender mi alma al diablo</label>
+                    </div>       
+
+                    <div class="btn-container">
+                                 
+                        <div>
+                            <input type="checkbox" name="checkbox" id="checkbox" required>
+                            <label for="checkbox">Acepto vender mi alma al diablo</label>
+                        </div>
+                        <div>
+                            <button class="submit">REGISTRARSE</button>
+                        </div>
+                        <div>
+                            <p>Ya tienes una cuenta? <a href="#">Iniciar sesión</a></p>
+                        </div>
+
                     </div>
-                    <div class="campos">
-                        <button class="submit">REGISTRARSE</button>
-                        <p>Ya tienes una cuenta? <a href="#">Iniciar sesión</a></p>
-                    </div>
+                    
 
 
                 </form>
@@ -114,21 +118,21 @@
 
     <footer>
 
-        <div class="container-logo">
+        <div class="footer-logo">
             <iconify-icon icon="material-symbols:copyright-outline"></iconify-icon>
-            <h3>AFTRLF</h3>
+            <h3> AFTERLIFE </h3>
         </div>
 
 
-        <nav class="container-nav">
+        <nav class="footer-nav">
             <a href="#">Preguntas frecuentes</a>
             <a href="#">Botón de arrentimiento</a>
             <a href="#">Trabaja con nosotros</a>
             <a href="#">Suscribite al newsletter</a>
         </nav>
 
-        <div class="container-redes">
-            <h4>SE PARTE DE LA COMUNIDAD:</h4>
+        <div class="footer-redes">
+            <h5>SE PARTE DE LA COMUNIDAD:</h5>
             <a href="#" target="_blank">
                 <iconify-icon icon="mdi:instagram"></iconify-icon>
             </a>
@@ -143,7 +147,6 @@
         </div>
 
     </footer>
-
 
 
 
