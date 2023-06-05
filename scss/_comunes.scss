@@ -25,28 +25,37 @@ a {
 /* NAVBAR */
 
 .navbar {
-    @include flex(row, nowrap, space-between, center);
+    @include flex(row, nowrap, space-around, center);
     background-color: #000;
-    padding: 20px;
+    padding: 5px;
     position: sticky;
     top: 0;
     z-index: 1;
+    
 
     .logo {
         font-family: $title-font;
         color: $pink;
-        font-size: 1.5em;
+        font-size: 1.5em;   
+        transition: all 0.5s;
 
         &:hover {
             color: $green;
+        }
+
+        @include responsive(){
+            font-size: 2.5em;
         }
     }
 
     iconify-icon {
         color: $green;
-
+        transition: all 0.5s;
         &:hover {
             color: $pink;
+        }
+        @include responsive(){
+            font-size: 1.5em;
         }
     }
 }
@@ -59,7 +68,7 @@ footer {
     padding: 20px;
     text-align: center;
     border: 3px solid black;
-    margin-top: 50px;
+    margin-top: 10%;
     .footer-logo { 
         @include flex(row, nowrap, center, center);
         font-size: 1.5em;
