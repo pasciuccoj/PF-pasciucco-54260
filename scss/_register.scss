@@ -17,17 +17,13 @@
 }
 
 
-// .main-register {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
 
 .main-register {
 
     @include responsive(1024px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+
 
     }
 
@@ -93,7 +89,6 @@
                 font-family: $title-font;
                 background-color: $pink;
                 color: $white;
-                cursor: pointer;
                 padding: 10px;
                 margin: 15px 0;
                 width: 250px;

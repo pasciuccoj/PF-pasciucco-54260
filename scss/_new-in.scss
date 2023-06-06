@@ -97,8 +97,8 @@
         grid-template-areas:
             "imagen1 descripcion1"
             "descripcion2 imagen2";
-        gap: 10% 5%;
         margin: 10%;
+        gap: 20px;
 
         .imagen1 {
             grid-area: imagen1;

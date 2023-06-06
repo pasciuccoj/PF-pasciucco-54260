@@ -73,7 +73,7 @@ footer {
   padding: 20px;
   text-align: center;
   border: 3px solid black;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 footer .footer-logo {
   display: flex;
@@ -402,7 +402,6 @@ footer .footer-nav a:hover {
   font-family: "Fugaz One", cursive;
   background-color: #FF009D;
   color: #FFF;
-  cursor: pointer;
   padding: 10px;
   margin: 15px 0;
   width: 250px;
@@ -506,8 +505,8 @@ footer .footer-nav a:hover {
   .new-container {
     display: grid;
     grid-template-areas: "imagen1 descripcion1" "descripcion2 imagen2";
-    gap: 10% 5%;
     margin: 10%;
+    gap: 20px;
   }
   .new-container .imagen1 {
     grid-area: imagen1;
@@ -526,6 +525,57 @@ footer .footer-nav a:hover {
     height: 300px;
     padding: 30px;
   }
+}
+
+@media screen and (min-width: 768px) {
+  .contacto-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10%;
+  }
+}
+
+.map, .contacto {
+  margin: 5%;
+  height: auto;
+  background-color: #FF009D;
+  font-family: "Fugaz One", cursive;
+  color: #000;
+  text-align: center;
+  padding: 5%;
+  box-shadow: 8px 8px 10px rgb(0, 0, 0);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.map iframe, .contacto iframe {
+  width: 100%;
+  height: 80%;
+  filter: grayscale(100%);
+  border: 1px solid #000;
+  margin-top: 30px;
+}
+.map .campos, .contacto .campos {
+  margin: 20px 0;
+  font-family: "Gemunu Libre", sans-serif;
+}
+.map .campos input, .contacto .campos input {
+  width: 100%;
+  border: 1px solid #000;
+}
+.map .campos textarea, .contacto .campos textarea {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #000;
+}
+.map button, .contacto button {
+  font-family: "Fugaz One", cursive;
+  background-color: #A0FF0D;
+  color: #0B0B0B;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #000;
 }
 
 /*# sourceMappingURL=styles.css.map */
