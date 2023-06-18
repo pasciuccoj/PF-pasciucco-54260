@@ -7,11 +7,9 @@
     }
 }
 
-/* logo en el carousel */
-// ojo, al modificar fotos en el mobile view, seguro haya que modificar tmb la posición
 
 .slogan {
-    // color: $green;
+    
     text-shadow: $shadow;
 
     h1 {
@@ -48,11 +46,6 @@
         font-weight: 400;
         margin: 0;
 
-        span {
-            color: $pink;
-            font-weight: 700;
-        }
-
         @include responsive() {
             font-size: 1.5em;
             bottom: 80px;
@@ -63,37 +56,94 @@
         @include responsive(1024px) {
             font-size: 2em;
             bottom: 100px;
-            right: 250px;
+            right: 230px;
         }
 
     }
 }
 
+
+
+/* NAVBAR efecto JS */
+
+.navbar-index {
+    @include flex(row, nowrap, space-between, center);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color 0.5s ease-in-out;
+    z-index: 1;
+ 
+    ul {
+        display: flex;
+        margin: 0;
+    }
+
+    @include responsive(){
+        padding: 10px 100px;
+    
+    }
+
+    .logo {
+        font-family: $title-font;
+        font-size: 1.5em;   
+        transition: all 0.5s;
+
+        &:hover {
+            color: $pink;
+        }
+
+        @include responsive(){
+            font-size: 2.5em;
+        }
+    }
+
+    iconify-icon {
+        transition: all 0.5s;
+        padding: 10px;
+        font-size: 1.5em;
+        &:hover {
+            color: $pink;
+        }
+        @include responsive(){
+            font-size: 2em;
+            padding: 15px;
+        }
+    }
+}
+
+.navbar-index.with-color {
+    background-color: $black;
+}
+
+
+/* new collection */
 
 .new {
     font-family: $title-font;
-    
-    
-        animation-duration: 3s;
-        animation-name: aparecer;
-        animation-iteration-count: infinite;
-        
-        
-        @keyframes aparecer {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-        
-    
+    font-size: 1.5em;
+    animation-duration: 3s;
+    animation-name: aparecer;
+    animation-iteration-count: infinite;
 
-    &:hover{
+    @keyframes aparecer {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    &:hover {
         color: $pink;
     }
 }
+
+
 
 
 /* cards productos */
@@ -101,56 +151,45 @@
 .container-cards {
     display: flex;
     flex-direction: column;
-    
-    @include responsive(){
+
+    @include responsive() {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         margin: 10px 65px;
     }
 
-    @include responsive(1024px){
+    @include responsive(1024px) {
         grid-template-columns: repeat(3, 1fr);
-        margin: 30px 150px;
+        margin: 30px 250px;
     }
 
     .card {
         background-color: $black;
         text-align: center;
-        box-shadow: $shadow;
-        padding: 20px;
-        margin: 20px;    
-        
+        padding: 10px;
+        margin: 20px;
+        border-color: $green;
+        border-radius: 0;
 
-        p, h5 {
+        p,
+        h5 {
             color: $white;
             margin: 20px;
         }
-    
+
         img {
-            height: 400px;
-            border-radius: 10px;
+            height: 350px;
         }
-        
+
         .price {
             font-family: $title-font;
             font-size: 2em;
         }
 
         .btn {
-            background-color: $green;
-            border: 1px solid #000;
-            color: $black;
-            font-family: $title-font;
-            width: 100%;
-            padding: 10px;
-            box-shadow: $shadow;
-        
-            &:hover {
-                background-color: $pink;
-                color: $white;
-            }
-        
+            @include botonVerde();
         }
+        
     }
 }
 
@@ -158,42 +197,70 @@
 
 /* filtro productos */
 
+.filtro-productos {
+    margin-top: 100px;
+    text-align: center;
 
-.container-labels {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    margin: 100px 60px 20px 60px;
+    h2 {
+        margin-top: 60%;
+    }
+    h3 {
+        margin-bottom: 60%;
+    }       
 
     @include responsive(){
-        flex-direction: row;
-        gap: 30px
-    }
-
-    label {
-        cursor: pointer;
-        padding: 5px;
-        color: $black;
-        background-color: $green;
-        text-align: center;
-        
-        &:hover {
-            color: $white;
-            background-color: $pink;
+        h2 {
+            margin-top: 20%
         }
-
-        @include responsive(){
-            width: 250px;
-            padding: 10px 20px;
-            font-size: 1em;
-        }
-        @include responsive(1024px){
-            width: 300px;
-            padding: 10px 20px;
-            font-size: 1.2em;
+        h3 {
+            margin-bottom: 20%;
+            font-size: 3em;
         }
     }
+
+    .container-labels {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        margin: 100px 10px 10px;
+
+
+        @include responsive() {
+            flex-direction: row;
+            gap: 30px
+        }
+
+        label {
+            cursor: pointer;
+            padding: 5px;
+            color: $black;
+            background-color: $green;
+            text-align: center;
+            transition: all 0.5s;
+
+            &:hover {
+                color: $white;
+                background-color: $pink;
+            }
+
+            @include responsive() {
+                width: 250px;
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+
+            @include responsive(1024px) {
+                width: 300px;
+                padding: 10px 20px;
+                font-size: 1.2em;
+            }
+        }
+
+    }
+
+
+
 
 }
 
@@ -212,10 +279,12 @@
     display: none;
 }
 
-#clothing:checked ~ .container-cards .clothing, #complements:checked ~ .container-cards .complements  {
+#clothing:checked~.container-cards .clothing,
+#complements:checked~.container-cards .complements {
     display: flex;
 }
 
-#todos:checked ~ .container-cards .clothing, #todos:checked ~ .container-cards .complements {
+#todos:checked~.container-cards .clothing,
+#todos:checked~.container-cards .complements {
     display: flex;
 }

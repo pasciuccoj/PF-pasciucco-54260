@@ -1,5 +1,5 @@
 .new-h2 {
-    margin: 50px;
+    margin: 200px 50px;
     font-family: $title-font;
     text-align: center;
 }
@@ -7,19 +7,19 @@
 
 .newsletter-container {
     @include flex(column, nowrap, center, center);
+    margin-top: 150px;
 
     @include responsive() {
         font-size: 1.5em;
+       
     }
 
     form {
         @include flex(column, nowrap, center, center);
         gap: 10px;
-
-
-        @include responsive() {
-            width: 500px;
-
+        width: 80%;
+        @include responsive(1024px){
+            width: 50%;
         }
 
         input {
@@ -29,20 +29,7 @@
         }
 
         button {
-            border: 1px solid #000;
-            font-family: $title-font;
-            background-color: $pink;
-            color: $white;
-            cursor: pointer;
-            padding: 5px;
-            margin-bottom: 20px;
-            width: 100%;
-
-            &:hover {
-                background-color: $green;
-                color: $black;
-                transition: all .5s;
-            }
+            @include botonRosa();
         }
 
     }
@@ -50,10 +37,7 @@
 
 
 .new-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(column, nowrap, center, center);
     margin: 10% 0;
 
 
@@ -85,11 +69,7 @@
         text-align: center;
         box-shadow: $shadow;
         margin: 10%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
+       
     }
 
     @include responsive() {

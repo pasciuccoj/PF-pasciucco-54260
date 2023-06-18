@@ -1,7 +1,6 @@
 /* paleta de colores */
 /* fuentes */
-/* resoluciones */
-/* separaciones */
+/* sombra */
 /* MIXIN */
 /* RESET */
 * {
@@ -29,22 +28,26 @@ a {
 .navbar {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: #000;
-  padding: 5px;
+  background-color: #0B0B0B;
+  padding: 10px;
   position: sticky;
   top: 0;
   z-index: 1;
 }
+@media screen and (min-width: 768px) {
+  .navbar {
+    padding: 10px 100px;
+  }
+}
 .navbar .logo {
   font-family: "Fugaz One", cursive;
-  color: #FF009D;
   font-size: 1.5em;
   transition: all 0.5s;
 }
 .navbar .logo:hover {
-  color: #A0FF0D;
+  color: #FF009D;
 }
 @media screen and (min-width: 768px) {
   .navbar .logo {
@@ -64,6 +67,45 @@ a {
   }
 }
 
+/* logo whatsapp */
+.whatsapp-logo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 40px 25px;
+  cursor: pointer;
+  z-index: 1;
+}
+@media screen and (min-width: 1024px) {
+  .whatsapp-logo {
+    margin: 40px 80px;
+  }
+}
+.whatsapp-logo img {
+  width: 50px;
+}
+@media screen and (min-width: 1024px) {
+  .whatsapp-logo img {
+    width: 90px;
+  }
+}
+
+/* control subir */
+.subir {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+  z-index: 1;
+  font-size: 3em;
+}
+@media screen and (min-width: 1024px) {
+  .subir {
+    font-size: 4em;
+    margin: 20px 100px;
+  }
+}
+
 /* FOOTER */
 footer {
   display: flex;
@@ -72,7 +114,7 @@ footer {
   align-items: center;
   padding: 20px;
   text-align: center;
-  border: 3px solid black;
+  border-top: 2px solid #A0FF0D;
   margin-top: 5%;
 }
 footer .footer-logo {
@@ -90,6 +132,7 @@ footer .footer-logo h3 {
 }
 footer .footer-redes a {
   font-size: 2em;
+  transition: all 0.5s;
 }
 footer .footer-redes a:hover {
   color: #FF009D;
@@ -104,12 +147,16 @@ footer .footer-nav {
 }
 footer .footer-nav a:hover {
   color: #FF009D;
+  transition: all 0.5s;
 }
 @media screen and (min-width: 768px) {
   footer .footer-nav {
     flex-direction: row;
     padding: 20px;
     margin-bottom: 20px;
+  }
+  footer .footer-redes {
+    margin-right: 150px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -120,6 +167,9 @@ footer .footer-nav a:hover {
     margin: 20px 60px;
     gap: 50px;
   }
+  footer .footer-logo {
+    margin-left: 150px;
+  }
 }
 
 /* carousel */
@@ -128,7 +178,6 @@ footer .footer-nav a:hover {
   object-fit: cover;
 }
 
-/* logo en el carousel */
 .slogan {
   text-shadow: 8px 8px 10px rgb(0, 0, 0);
 }
@@ -166,10 +215,6 @@ footer .footer-nav a:hover {
   font-weight: 400;
   margin: 0;
 }
-.slogan p span {
-  color: #FF009D;
-  font-weight: 700;
-}
 @media screen and (min-width: 768px) {
   .slogan p {
     font-size: 1.5em;
@@ -181,12 +226,69 @@ footer .footer-nav a:hover {
   .slogan p {
     font-size: 2em;
     bottom: 100px;
-    right: 250px;
+    right: 230px;
   }
 }
 
+/* NAVBAR efecto JS */
+.navbar-index {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.5s ease-in-out;
+  z-index: 1;
+}
+.navbar-index ul {
+  display: flex;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .navbar-index {
+    padding: 10px 100px;
+  }
+}
+.navbar-index .logo {
+  font-family: "Fugaz One", cursive;
+  font-size: 1.5em;
+  transition: all 0.5s;
+}
+.navbar-index .logo:hover {
+  color: #FF009D;
+}
+@media screen and (min-width: 768px) {
+  .navbar-index .logo {
+    font-size: 2.5em;
+  }
+}
+.navbar-index iconify-icon {
+  transition: all 0.5s;
+  padding: 10px;
+  font-size: 1.5em;
+}
+.navbar-index iconify-icon:hover {
+  color: #FF009D;
+}
+@media screen and (min-width: 768px) {
+  .navbar-index iconify-icon {
+    font-size: 2em;
+    padding: 15px;
+  }
+}
+
+.navbar-index.with-color {
+  background-color: #0B0B0B;
+}
+
+/* new collection */
 .new {
   font-family: "Fugaz One", cursive;
+  font-size: 1.5em;
   animation-duration: 3s;
   animation-name: aparecer;
   animation-iteration-count: infinite;
@@ -218,23 +320,24 @@ footer .footer-nav a:hover {
 @media screen and (min-width: 1024px) {
   .container-cards {
     grid-template-columns: repeat(3, 1fr);
-    margin: 30px 150px;
+    margin: 30px 250px;
   }
 }
 .container-cards .card {
   background-color: #0B0B0B;
   text-align: center;
-  box-shadow: 8px 8px 10px rgb(0, 0, 0);
-  padding: 20px;
+  padding: 10px;
   margin: 20px;
+  border-color: #A0FF0D;
+  border-radius: 0;
 }
-.container-cards .card p, .container-cards .card h5 {
+.container-cards .card p,
+.container-cards .card h5 {
   color: #FFF;
   margin: 20px;
 }
 .container-cards .card img {
-  height: 400px;
-  border-radius: 10px;
+  height: 350px;
 }
 .container-cards .card .price {
   font-family: "Fugaz One", cursive;
@@ -242,12 +345,13 @@ footer .footer-nav a:hover {
 }
 .container-cards .card .btn {
   background-color: #A0FF0D;
-  border: 1px solid #000;
   color: #0B0B0B;
   font-family: "Fugaz One", cursive;
   width: 100%;
   padding: 10px;
   box-shadow: 8px 8px 10px rgb(0, 0, 0);
+  border-radius: 0;
+  transition: all 0.5s;
 }
 .container-cards .card .btn:hover {
   background-color: #FF009D;
@@ -255,39 +359,59 @@ footer .footer-nav a:hover {
 }
 
 /* filtro productos */
-.container-labels {
+.filtro-productos {
+  margin-top: 100px;
+  text-align: center;
+}
+.filtro-productos h2 {
+  margin-top: 60%;
+}
+.filtro-productos h3 {
+  margin-bottom: 60%;
+}
+@media screen and (min-width: 768px) {
+  .filtro-productos h2 {
+    margin-top: 20%;
+  }
+  .filtro-productos h3 {
+    margin-bottom: 20%;
+    font-size: 3em;
+  }
+}
+.filtro-productos .container-labels {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-  margin: 100px 60px 20px 60px;
+  margin: 100px 10px 10px;
 }
 @media screen and (min-width: 768px) {
-  .container-labels {
+  .filtro-productos .container-labels {
     flex-direction: row;
     gap: 30px;
   }
 }
-.container-labels label {
+.filtro-productos .container-labels label {
   cursor: pointer;
   padding: 5px;
   color: #0B0B0B;
   background-color: #A0FF0D;
   text-align: center;
+  transition: all 0.5s;
 }
-.container-labels label:hover {
+.filtro-productos .container-labels label:hover {
   color: #FFF;
   background-color: #FF009D;
 }
 @media screen and (min-width: 768px) {
-  .container-labels label {
+  .filtro-productos .container-labels label {
     width: 250px;
     padding: 10px 20px;
     font-size: 1em;
   }
 }
 @media screen and (min-width: 1024px) {
-  .container-labels label {
+  .filtro-productos .container-labels label {
     width: 300px;
     padding: 10px 20px;
     font-size: 1.2em;
@@ -306,11 +430,13 @@ footer .footer-nav a:hover {
   display: none;
 }
 
-#clothing:checked ~ .container-cards .clothing, #complements:checked ~ .container-cards .complements {
+#clothing:checked ~ .container-cards .clothing,
+#complements:checked ~ .container-cards .complements {
   display: flex;
 }
 
-#todos:checked ~ .container-cards .clothing, #todos:checked ~ .container-cards .complements {
+#todos:checked ~ .container-cards .clothing,
+#todos:checked ~ .container-cards .complements {
   display: flex;
 }
 
@@ -336,7 +462,6 @@ footer .footer-nav a:hover {
   }
 }
 .main-register .container-img {
-  background-color: #FF009D;
   margin: 5px 10px;
 }
 .main-register .container-img img {
@@ -350,17 +475,11 @@ footer .footer-nav a:hover {
 }
 @media screen and (min-width: 768px) {
   .main-register .container-img {
-    margin: 30px 60px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .main-register .container-img {
-    margin: 30px 10px 30px 50px;
+    margin: 60px 10px;
   }
 }
 .main-register .registro-container {
-  background-color: #A0FF0D;
-  color: #0B0B0B;
+  border: 1px solid #A0FF0D;
   margin: 10px 10px;
 }
 @media screen and (min-width: 768px) {
@@ -370,7 +489,7 @@ footer .footer-nav a:hover {
 }
 @media screen and (min-width: 1024px) {
   .main-register .registro-container {
-    margin: 30px 50px 30px 10px;
+    margin: 10%;
   }
 }
 .main-register .registro-container .campos {
@@ -395,16 +514,23 @@ footer .footer-nav a:hover {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin: 50px 0;
 }
 .main-register .registro-container .btn-container .submit {
-  border: 1px solid #000;
+  background-color: #A0FF0D;
+  color: #0B0B0B;
   font-family: "Fugaz One", cursive;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 8px 8px 10px rgb(0, 0, 0);
+  border-radius: 0;
+  transition: all 0.5s;
+  width: 250px;
+  margin: 15px 0;
+}
+.main-register .registro-container .btn-container .submit:hover {
   background-color: #FF009D;
   color: #FFF;
-  padding: 10px;
-  margin: 15px 0;
-  width: 250px;
 }
 .main-register .registro-container .btn-container a {
   color: #FF009D;
@@ -412,7 +538,7 @@ footer .footer-nav a:hover {
 }
 
 .new-h2 {
-  margin: 50px;
+  margin: 200px 50px;
   font-family: "Fugaz One", cursive;
   text-align: center;
 }
@@ -422,6 +548,7 @@ footer .footer-nav a:hover {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  margin-top: 150px;
 }
 @media screen and (min-width: 768px) {
   .newsletter-container {
@@ -434,10 +561,11 @@ footer .footer-nav a:hover {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  width: 80%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .newsletter-container form {
-    width: 500px;
+    width: 50%;
   }
 }
 .newsletter-container form input {
@@ -446,24 +574,23 @@ footer .footer-nav a:hover {
   text-align: center;
 }
 .newsletter-container form button {
-  border: 1px solid #000;
-  font-family: "Fugaz One", cursive;
   background-color: #FF009D;
   color: #FFF;
-  cursor: pointer;
-  padding: 5px;
-  margin-bottom: 20px;
+  font-family: "Fugaz One", cursive;
   width: 100%;
+  padding: 10px;
+  box-shadow: 8px 8px 10px rgb(0, 0, 0);
+  border-radius: 0;
+  transition: all 0.5s;
 }
 .newsletter-container form button:hover {
   background-color: #A0FF0D;
   color: #0B0B0B;
-  transition: all 0.5s;
 }
 
 .new-container {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   margin: 10% 0;
@@ -496,10 +623,6 @@ footer .footer-nav a:hover {
   text-align: center;
   box-shadow: 8px 8px 10px rgb(0, 0, 0);
   margin: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 @media screen and (min-width: 768px) {
   .new-container {
@@ -538,12 +661,12 @@ footer .footer-nav a:hover {
 .map, .contacto {
   margin: 5%;
   height: auto;
-  background-color: #FF009D;
   font-family: "Fugaz One", cursive;
-  color: #000;
+  color: #FF009D;
   text-align: center;
   padding: 5%;
   box-shadow: 8px 8px 10px rgb(0, 0, 0);
+  border: 1px solid #FF009D;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -553,7 +676,6 @@ footer .footer-nav a:hover {
   width: 100%;
   height: 80%;
   filter: grayscale(100%);
-  border: 1px solid #000;
   margin-top: 30px;
 }
 .map .campos, .contacto .campos {
@@ -570,12 +692,113 @@ footer .footer-nav a:hover {
   border: 1px solid #000;
 }
 .map button, .contacto button {
+  background-color: #FF009D;
+  color: #FFF;
   font-family: "Fugaz One", cursive;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 8px 8px 10px rgb(0, 0, 0);
+  border-radius: 0;
+  transition: all 0.5s;
+}
+.map button:hover, .contacto button:hover {
   background-color: #A0FF0D;
   color: #0B0B0B;
-  padding: 10px;
+}
+
+.title {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0 20px;
+  gap: 10px;
+}
+.title iconify-icon {
+  font-size: 2em;
+}
+
+@media screen and (min-width: 1024px) {
+  .container-todo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "producto total" "producto total" "producto total";
+    padding: 200px;
+  }
+}
+.container-todo .container-carrito {
+  margin: 100px 0;
+}
+.container-todo .container-carrito .producto {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+  margin: 10px 0;
+  border: 1px solid #A0FF0D;
+  padding: 20px;
+}
+.container-todo .container-carrito .producto img {
+  width: 100px;
+  height: 100px;
+  box-shadow: 8px 8px 10px rgb(0, 0, 0);
+}
+@media screen and (min-width: 1024px) {
+  .container-todo .container-carrito {
+    display: grid;
+    grid-area: producto;
+  }
+}
+.container-todo .container-total {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 10px;
+  text-align: end;
+  border: 1px solid #A0FF0D;
+  padding: 20px;
+  height: 300px;
+}
+.container-todo .container-total .total {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  gap: 50px;
+}
+.container-todo .container-total .total p {
+  text-align: start;
+}
+.container-todo .container-total button {
+  background-color: #A0FF0D;
+  color: #0B0B0B;
+  font-family: "Fugaz One", cursive;
   width: 100%;
-  border: 1px solid #000;
+  padding: 10px;
+  box-shadow: 8px 8px 10px rgb(0, 0, 0);
+  border-radius: 0;
+  transition: all 0.5s;
+  width: 80%;
+}
+.container-todo .container-total button:hover {
+  background-color: #FF009D;
+  color: #FFF;
+}
+.container-todo .container-total button a {
+  color: #0B0B0B;
+}
+.container-todo .container-total button:hover {
+  background-color: #FF009D;
+}
+.container-todo .container-total button:hover a {
+  color: #FFF;
+}
+@media screen and (min-width: 1024px) {
+  .container-todo .container-total {
+    grid-area: total;
+    margin: 200px 50px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

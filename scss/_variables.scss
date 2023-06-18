@@ -13,18 +13,8 @@ $title-font: 'Fugaz One', cursive;
 $text-font: 'Gemunu Libre', sans-serif;
 
 
-/* resoluciones */
 
-$tablet: 768px;
-$desktop: 1024px;
-
-
-/* separaciones */
-$espacio-mini: 10px;
-$espacio-chico: 20px;
-$espacio-medio: 40px;
-$espacio-grande: 60px;
-
+/* sombra */
 
 $shadow: 8px 8px 10px rgba(0, 0, 0, 1);
 
@@ -33,16 +23,46 @@ $shadow: 8px 8px 10px rgba(0, 0, 0, 1);
 
 /* MIXIN */
 
-@mixin responsive($medida : 768px ) {
-    @media screen and (min-width: $medida){
+@mixin responsive($medida : 768px) {
+    @media screen and (min-width: $medida) {
         @content;
     }
 }
 
-@mixin flex($direction, $cut, $justify, $align){
+@mixin flex($direction, $cut, $justify, $align) {
     display: flex;
     flex-flow: $direction $cut;
     justify-content: $justify;
     align-items: $align;
 }
 
+@mixin botonVerde() {
+    background-color: $green;
+    color: $black;
+    font-family: $title-font;
+    width: 100%;
+    padding: 10px;
+    box-shadow: $shadow;
+    border-radius: 0;
+    transition: all 0.5s;
+    &:hover {
+        background-color: $pink;
+        color: $white;
+    }
+}
+
+
+@mixin botonRosa() {
+    background-color: $pink;
+    color: $white;
+    font-family: $title-font;
+    width: 100%;
+    padding: 10px;
+    box-shadow: $shadow;
+    border-radius: 0;
+    transition: all 0.5s;
+    &:hover {
+        background-color: $green;
+        color: $black;
+    }
+}

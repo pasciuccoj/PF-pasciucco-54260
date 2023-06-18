@@ -17,14 +17,14 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- css propio  -->
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Sucursales | AFTRL</title>
+    <title>Contacto | AFTRL</title>
 </head>
 
 <body>
     <!-- navbar -->    
     <nav class="navbar">
         <div>
-            <a class="logo" href="../index.html">AFTERLIFE</a>
+            <a class="logo" href="../index.html">AFTRLF</a>
         </div>
         <div>
             <a class="navbar-brand" href="#">
@@ -43,6 +43,17 @@
     </nav>
 
     <main>
+        <!-- WPP -->
+        <div class="whatsapp-logo" data-aos="fade-up-right">
+            <img src="../img/wpp-logo.png" alt="WhatsApp Logo">
+        </div>          
+
+        <!-- UP -->
+        <div class="subir" data-aos="fade-up-left">
+            <a href="#">
+                <iconify-icon icon="icon-park-solid:up-c"></iconify-icon>
+            </a>
+        </div>
 
         <section class="contacto-container">
             <div class="contacto">
@@ -52,56 +63,30 @@
                         <label for="name">Nombre completo:</label>
                         <input type="text" id="name" name="name">
                     </div>
-    
                     <div class="campos">
                         <label for="email">Correo electrónico:</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="campos">
-                        <textarea name="textarea" id="textarea" rows="5">Deja tu consulta! Te responderemos a la brevedad :) </textarea>
+                        <textarea name="textarea" id="textarea" rows="5" placeholder="Deja tu consulta! Te responderemos a la brevedad :) "></textarea>
                     </div>
                     <button>ENVIAR</button>
-
                 </form>
             </div>
         
             <div class="map">
                     <h3>SUCURSALES:</h3> 
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d68216.86948231483!2d-65.04635883965412!3d-42.76798691818151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1682285099800!5m2!1ses!2sar"loading="lazy"></iframe>            
-                
-
             </div>
         </section>
-
-
-
-
     </main>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <footer>
-
         <div class="footer-logo">
             <iconify-icon icon="material-symbols:copyright-outline"></iconify-icon>
-            <h3> AFTERLIFE </h3>
+            <h3> AFTRLF '23 </h3>
         </div>
-
 
         <nav class="footer-nav">
             <a href="#">Preguntas frecuentes</a>
@@ -115,17 +100,16 @@
             <a href="#" target="_blank">
                 <iconify-icon icon="mdi:instagram"></iconify-icon>
             </a>
-
             <a href="#" target="_blank">
                 <iconify-icon icon="uil:facebook"></iconify-icon>
             </a>
-
             <a href="#" target="_blank">
                 <iconify-icon icon="ic:baseline-whatsapp"></iconify-icon>
             </a>
         </div>
 
     </footer>
+
 
 
 
@@ -136,6 +120,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Script propio -->
+    <script src="../script.js"></script>
 </body>
 
 </html>
