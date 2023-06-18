@@ -78,7 +78,7 @@ a {
 }
 @media screen and (min-width: 1024px) {
   .whatsapp-logo {
-    margin: 40px 80px;
+    margin: 40px 60px;
   }
 }
 .whatsapp-logo img {
@@ -102,7 +102,7 @@ a {
 @media screen and (min-width: 1024px) {
   .subir {
     font-size: 4em;
-    margin: 20px 100px;
+    margin: 20px 50px;
   }
 }
 
@@ -314,13 +314,13 @@ footer .footer-nav a:hover {
   .container-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 10px 65px;
+    margin: 10px 10%;
   }
 }
 @media screen and (min-width: 1024px) {
   .container-cards {
     grid-template-columns: repeat(3, 1fr);
-    margin: 30px 250px;
+    margin: 30px 15%;
   }
 }
 .container-cards .card {
@@ -389,6 +389,7 @@ footer .footer-nav a:hover {
   .filtro-productos .container-labels {
     flex-direction: row;
     gap: 30px;
+    margin: 5% 15%;
   }
 }
 .filtro-productos .container-labels label {

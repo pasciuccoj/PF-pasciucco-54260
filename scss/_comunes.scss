@@ -78,7 +78,7 @@ a {
     z-index: 1;
 
     @include responsive(1024px){
-        margin: 40px 80px;
+        margin: 40px 60px;
     }
 
     img {
@@ -103,7 +103,7 @@ a {
 
     @include responsive(1024px) {
         font-size: 4em;
-        margin: 20px 100px;
+        margin: 20px 50px;
     }
 
 }

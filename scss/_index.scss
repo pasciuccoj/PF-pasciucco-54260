@@ -155,12 +155,12 @@
     @include responsive() {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        margin: 10px 65px;
+        margin: 10px 10%;
     }
 
     @include responsive(1024px) {
         grid-template-columns: repeat(3, 1fr);
-        margin: 30px 250px;
+        margin: 30px 15%;
     }
 
     .card {
@@ -228,7 +228,8 @@
 
         @include responsive() {
             flex-direction: row;
-            gap: 30px
+            gap: 30px;
+            margin: 5% 15%;
         }
 
         label {
